@@ -8,3 +8,6 @@ The A base gets paired with a T base, the T base is paired with a A base, the C 
 */
 
 
+const pairElement = (aString) => {
+    
+}
