@@ -18,20 +18,14 @@ When given G, the function pairs it with C.
 const pairElement = (aString) => {
   const dnaArray = aString.split("");
   let newArray = [];
-  let count = 0;
-  while (count < aString.length) {
-    let subArray = [];
-    for (i = 0; i < 2; i++) {
-      console.log(`i=${i} count=${count}`);
-      subArray.push(dnaArray[count]);
-      count += 1;
-    }
-    let subArrayB = subArray.slice().reverse();
-    newArray.push(subArray);
-    newArray.push(subArrayB);
+  for (let item of dnaArray) {
+    if (item == "A") newArray.push(["A", "T"]);
+    if (item == "T") newArray.push(["T", "A"]);
+    if (item == "C") newArray.push(["C", "G"]);
+    if (item == "G") newArray.push(["G", "C"]);
   }
   return newArray;
 };
 
 // Tests!
-console.log(pairElement("ATCGDF"));
+console.log(pairElement("ATCGA"));
